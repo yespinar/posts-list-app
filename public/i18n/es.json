@@ -1,5 +1,18 @@
 {
   "HOME": {
     "TITLE": "Lista de Posts"
+  },
+  "HEADER":{
+    "SEARCH_PLACEHOLDER": "Buscar posts...",
+    "LOGOUT": "Salir"
+  },
+  "LOGIN":{
+    "TITLE": "Bienvenido",
+    "DESCRIPTION": "Introduce tus credenciales",
+    "USER_LABEL": "Usuario",
+    "USER_PLACEHOLDER": "Introduce tu usuario",
+    "PASSWORD_LABEL": "Contraseña",
+    "PASSWORD_PLACEHOLDER": "••••••••••••",
+    "SUBMIT_BUTTON": "Iniciar Sesión"
   }
 }

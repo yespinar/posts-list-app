@@ -1,0 +1,23 @@
+<div class="mb-4 p-8">
+  <div class="flex flex-col gap-4 w-3/4 mx-auto h-screen">
+
+    <div>
+      <h3 class="text-2xl font-bold">{{ 'LOGIN.TITLE' | translate }}</h3>
+      <p class="text-lg text-gray-600">{{ 'LOGIN.DESCRIPTION' | translate }}</p>
+    </div>
+
+    <p-card>
+      <form class="flex flex-col gap-4">
+        <label class="flex flex-col gap-1">
+          {{ 'LOGIN.USER_LABEL' | translate }}:
+          <input pInputText [formField]="loginForm.user" type="text" pSize="small" placeholder="{{ 'LOGIN.USER_PLACEHOLDER' | translate }}" />
+        </label>
+        <label class="flex flex-col gap-1">
+          {{ 'LOGIN.PASSWORD_LABEL' | translate }}:
+          <input pInputText [formField]="loginForm.password" type="password" pSize="small" placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}" />
+        </label>
+        <button pButton label="{{ 'LOGIN.SUBMIT_BUTTON' | translate }}" size="small" class="mt-4"></button>
+      </form>
+    </p-card>
+  </div>
+</div>

@@ -1,5 +1,18 @@
 {
-  "test": {
-    "msg": "hello world"
+  "HOME": {
+    "TITLE": "Posts List"
+  },
+  "HEADER":{
+    "SEARCH_PLACEHOLDER": "Search posts...",
+    "LOGOUT": "Logout"
+  },
+  "LOGIN":{
+    "TITLE": "Welcome",
+    "DESCRIPTION": "Enter your credentials",
+    "USER_LABEL": "User",
+    "USER_PLACEHOLDER": "Enter your user",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_PLACEHOLDER": "••••••••••••",
+    "SUBMIT_BUTTON": "Login"
   }
 }
