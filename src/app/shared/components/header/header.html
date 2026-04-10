@@ -1,0 +1,14 @@
+<header class="bg-green-50 h-16 flex">
+  <div class="flex-1 flex items-center justify-start px-4">
+    <h1>{{ title }}</h1>
+  </div>
+  <div class="flex-1 flex items-center justify-end px-4 gap-4">
+    <p-floatlabel variant="on">
+      <input pInputText id="search" [(ngModel)]="search" autocomplete="off" pSize="small" />
+      <label for="search">{{ 'HEADER.SEARCH_PLACEHOLDER' | translate }}</label>
+    </p-floatlabel>
+    <p-selectbutton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value"
+      aria-labelledby="basic" size="small" allowEmpty="false" />
+    <p-button label="{{ 'HEADER.LOGOUT' | translate }}" size="small" />
+  </div>
+</header>
