@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { form, FormField } from '@angular/forms/signals';
 import { LoginData } from '../interfaces/login-data';
@@ -15,7 +15,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login {
+export class Login implements OnInit {
   private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
   isLoading = signal(false);
@@ -26,6 +26,12 @@ export class Login {
     password: '',
   });
   loginForm = form(this.loginModel);
+
+  ngOnInit(): void {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigateByUrl('/posts');
+    }
+  }
 
   onSubmit(): void {
     this.errorMessage.set(null);
