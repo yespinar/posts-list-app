@@ -10,13 +10,22 @@
       <form class="flex flex-col gap-4">
         <label class="flex flex-col gap-1">
           {{ 'LOGIN.USER_LABEL' | translate }}:
-          <input pInputText [formField]="loginForm.user" type="text" pSize="small" placeholder="{{ 'LOGIN.USER_PLACEHOLDER' | translate }}" />
+          <input pInputText [formField]="loginForm.user" type="text" pSize="small"
+            placeholder="{{ 'LOGIN.USER_PLACEHOLDER' | translate }}" />
         </label>
         <label class="flex flex-col gap-1">
           {{ 'LOGIN.PASSWORD_LABEL' | translate }}:
-          <input pInputText [formField]="loginForm.password" type="password" pSize="small" placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}" />
+          <input pInputText [formField]="loginForm.password" type="password" pSize="small"
+            placeholder="{{ 'LOGIN.PASSWORD_PLACEHOLDER' | translate }}" />
         </label>
-        <button pButton label="{{ 'LOGIN.SUBMIT_BUTTON' | translate }}" size="small" class="mt-4"></button>
+        <button pButton type="button" label="{{ 'LOGIN.SUBMIT_BUTTON' | translate }}" size="small" class="mt-4"
+          [disabled]="isLoading()" (click)="onSubmit()"></button>
+
+        @if(errorMessage()){
+        <p class="text-sm text-red-600">
+          {{ errorMessage() }}
+        </p>
+        }
       </form>
     </p-card>
   </div>

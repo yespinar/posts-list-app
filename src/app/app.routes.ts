@@ -3,7 +3,8 @@ import { Login } from './features/auth/pages/login';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: Login,
+    data: { showSearch: false, showLogout: false },
   },
 ];
