@@ -7,8 +7,15 @@
       <input pInputText id="search" [(ngModel)]="search" autocomplete="off" pSize="small" />
       <label for="search">{{ 'HEADER.SEARCH_PLACEHOLDER' | translate }}</label>
     </p-floatlabel>
-    <p-selectbutton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value"
-      aria-labelledby="basic" size="small" allowEmpty="false" />
+    <p-selectbutton
+      [options]="languageOptions"
+      optionLabel="label"
+      optionValue="value"
+      size="small"
+      allowEmpty="false"
+      [ngModel]="languageSelected()"
+      (ngModelChange)="onLanguageChange($event)"
+    />
     <p-button label="{{ 'HEADER.LOGOUT' | translate }}" size="small" />
   </div>
 </header>
