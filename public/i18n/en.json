@@ -14,5 +14,8 @@
     "PASSWORD_LABEL": "Password",
     "PASSWORD_PLACEHOLDER": "••••••••••••",
     "SUBMIT_BUTTON": "Login"
+  },
+  "POSTS": {
+    "TITLE": "Posts list"
   }
 }

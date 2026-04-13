@@ -1,6 +1,36 @@
 <div class="mb-4 p-8">
-  <div class="flex flex-col gap-4 w-3/4 mx-auto h-screen">
-    <h2 class="text-2xl font-bold">Posts</h2>
-    <p class="mt-4 text-gray-700">Esta es una ruta protegida. Si ves esto, estás autenticado.</p>
+  <div class="flex flex-col gap-4 w-3/4 mx-auto">
+    <h2 class="text-2xl font-bold">{{ 'POSTS.TITLE' | translate }}</h2>
+
+    <div class="grid gap-4 md:grid-cols-2">
+      <p-select [options]="authors()" [ngModel]="selectedAuthor()" (ngModelChange)="selectedAuthor.set($event)"
+        optionLabel="label" optionValue="value" placeholder="Filter by author" />
+
+      <p-select [options]="tags()" [ngModel]="selectedTag()" (ngModelChange)="selectedTag.set($event)"
+        optionLabel="label" optionValue="value" placeholder="Filter by tag" />
+    </div>
+
+    <section class="space-y-3">
+
+      @if(filteredPosts().length === 0){
+      <div>
+        <p class="text-slate-500">No posts match this selection.</p>
+      </div>
+      }
+
+
+      <ul class="flex flex-col gap-4">
+        @for (post of filteredPosts(); track post.id) {
+        <app-post-card
+          [post]="post"
+          [authorName]="authorProfiles()[post.userId]?.name || 'Unknown'"
+          [authorAvatar]="authorProfiles()[post.userId]?.avatar"
+        ></app-post-card>
+        } @empty {
+        <li>No hay posts.</li>
+        }
+
+      </ul>
+    </section>
   </div>
 </div>
