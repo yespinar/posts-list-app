@@ -14,20 +14,17 @@
 
       @if(filteredPosts().length === 0){
       <div>
-        <p class="text-slate-500">No posts match this selection.</p>
+        <p class="text-slate-500">{{ 'POSTS.NO_POSTS_MATCH' | translate }}</p>
       </div>
       }
 
 
       <ul class="flex flex-col gap-4">
         @for (post of filteredPosts(); track post.id) {
-        <app-post-card
-          [post]="post"
-          [authorName]="authorProfiles()[post.userId]?.name || 'Unknown'"
-          [authorAvatar]="authorProfiles()[post.userId]?.avatar"
-        ></app-post-card>
+        <app-post-card [post]="post" [authorName]="authorProfiles()[post.userId]?.name || 'Unknown'"
+          [authorAvatar]="authorProfiles()[post.userId]?.avatar"></app-post-card>
         } @empty {
-        <li>No hay posts.</li>
+        <li>{{ 'POSTS.NO_POSTS' | translate }}</li>
         }
 
       </ul>

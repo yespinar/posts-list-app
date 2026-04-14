@@ -16,6 +16,8 @@
     "SUBMIT_BUTTON": "Iniciar Sesión"
   },
   "POSTS": {
-    "TITLE": "Lista de posts"
+    "TITLE": "Lista de posts",
+    "NO_POSTS": "No hay posts para mostrar.",
+    "NO_POSTS_MATCH": "Ningún post coincide con ese filtro."
   }
 }

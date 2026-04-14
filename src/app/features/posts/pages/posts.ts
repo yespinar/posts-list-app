@@ -1,17 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SelectModule } from 'primeng/select';
 import { FormsModule } from '@angular/forms';
 import { PostsService } from '../services/posts.service';
-import type { Post } from '../interfaces/post';
 import { PostCard } from '../components/post-card/post-card';
-
-interface SelectOption<T> {
-  label: string;
-  value: T;
-}
 
 @Component({
   selector: 'app-posts',
@@ -25,7 +19,7 @@ export class Posts {
   selectedAuthor = signal<number | null>(null);
   selectedTag = signal<string | null>(null);
 
-  authors = computed<SelectOption<number | null>[]>(() => [
+  authors = computed<{ label: string; value: number | null }[]>(() => [
     { label: 'All authors', value: null },
     ...this.users()
       .sort((a, b) => a.name.localeCompare(b.name))

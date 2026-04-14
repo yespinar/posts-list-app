@@ -16,6 +16,8 @@
     "SUBMIT_BUTTON": "Login"
   },
   "POSTS": {
-    "TITLE": "Posts list"
+    "TITLE": "Posts list",
+    "NO_POSTS": "No posts to display.",
+    "NO_POSTS_MATCH": "No posts match this selection."
   }
 }
