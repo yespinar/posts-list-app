@@ -4,16 +4,16 @@ import { CommonModule } from '@angular/common';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { SelectModule } from 'primeng/select';
 import { FormsModule } from '@angular/forms';
-import { PostsService } from '../services/posts.service';
-import { PostCard } from '../components/post-card/post-card';
+import { PostsService } from '../../services/posts.service';
+import { PostCard } from '../../components/post-card/post-card';
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.html',
+  selector: 'app-posts-list',
+  templateUrl: './posts-list.html',
   imports: [CommonModule, TranslatePipe, SelectModule, FormsModule, PostCard, PaginatorModule],
 })
-export class Posts {
+export class PostsList {
   postService = inject(PostsService);
   private readonly translateService = inject(TranslateService);
   posts = toSignal(this.postService.getPosts(), { initialValue: [] });
@@ -103,7 +103,7 @@ export class Posts {
   }
 
   onPageChange(event: PaginatorState) {
-        this.first.set(event.first ?? 0);
-        this.rows.set(event.rows ?? 10);
-    }
+    this.first.set(event.first ?? 0);
+    this.rows.set(event.rows ?? 10);
+  }
 }

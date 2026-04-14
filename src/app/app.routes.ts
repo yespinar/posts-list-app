@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Login } from './features/auth/pages/login';
-import { Posts } from './features/posts/pages/posts';
+import { PostsList } from './features/posts/pages/posts-list/posts-list';
 import { authGuard } from './features/auth/guards/auth.guard';
 
 export const routes: Routes = [
@@ -11,7 +11,7 @@ export const routes: Routes = [
   },
   {
     path: 'posts',
-    component: Posts,
+    component: PostsList,
     canActivate: [authGuard],
   },
   {
