@@ -18,6 +18,11 @@
   "POSTS": {
     "TITLE": "Posts list",
     "NO_POSTS": "No posts to display.",
-    "NO_POSTS_MATCH": "No posts match this selection."
+    "NO_POSTS_MATCH": "No posts match this selection.",
+    "FILTER_BY_AUTHOR": "Filter by author",
+    "FILTER_BY_TAG": "Filter by tag",
+    "ALL_AUTHORS": "All authors",
+    "ALL_TAGS": "All tags",
+    "PAGE_REPORT": "Showing {{ start }} to {{ end }} of {{ total }} posts"
   }
 }

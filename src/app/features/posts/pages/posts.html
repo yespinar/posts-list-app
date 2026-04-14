@@ -1,15 +1,18 @@
 <div class="mb-4 p-8">
   <div class="flex flex-col gap-4 w-3/4 mx-auto">
     <h2 class="text-2xl font-bold">{{ 'POSTS.TITLE' | translate }}</h2>
-
     <div class="grid gap-4 md:grid-cols-2">
-      <p-select [options]="authors()" [ngModel]="selectedAuthor()" (ngModelChange)="selectedAuthor.set($event)"
-        optionLabel="label" optionValue="value" placeholder="Filter by author" />
+      <p-select [options]="authors()" [ngModel]="selectedAuthor()" (ngModelChange)="onAuthorChange($event)"
+        optionLabel="label" optionValue="value" placeholder="{{ 'POSTS.FILTER_BY_AUTHOR' | translate }}" />
 
-      <p-select [options]="tags()" [ngModel]="selectedTag()" (ngModelChange)="selectedTag.set($event)"
-        optionLabel="label" optionValue="value" placeholder="Filter by tag" />
+      <p-select [options]="tags()" [ngModel]="selectedTag()" (ngModelChange)="onTagChange($event)"
+        optionLabel="label" optionValue="value" placeholder="{{ 'POSTS.FILTER_BY_TAG' | translate }}" />
     </div>
-
+        @if(filteredPosts().length > 0){
+        <p class="text-sm text-slate-600" >
+          {{ 'POSTS.PAGE_REPORT' | translate: pageReportParams() }}
+        </p>
+      }
     <section class="space-y-3">
 
       @if(filteredPosts().length === 0){
@@ -18,16 +21,18 @@
       </div>
       }
 
-
-      <ul class="flex flex-col gap-4">
-        @for (post of filteredPosts(); track post.id) {
+      <ul class="grid gap-4 md:grid-cols-2">
+        @for (post of paginatePosts(); track post.id) {
         <app-post-card [post]="post" [authorName]="authorProfiles()[post.userId]?.name || 'Unknown'"
           [authorAvatar]="authorProfiles()[post.userId]?.avatar"></app-post-card>
         } @empty {
-        <li>{{ 'POSTS.NO_POSTS' | translate }}</li>
-        }
-
+        <li>{{ 'POSTS.NO_POSTS' | translate }}</li>       }
       </ul>
+      <div class="card flex justify-center ">
+
+        <p-paginator class="bg-green-200" (onPageChange)="onPageChange($event)" [first]="first()" [rows]="rows()"
+          [totalRecords]="filteredPosts().length" [rowsPerPageOptions]="[10, 15, 20]" />
+      </div>
     </section>
   </div>
 </div>

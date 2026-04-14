@@ -18,6 +18,11 @@
   "POSTS": {
     "TITLE": "Lista de posts",
     "NO_POSTS": "No hay posts para mostrar.",
-    "NO_POSTS_MATCH": "Ningún post coincide con ese filtro."
+    "NO_POSTS_MATCH": "Ningún post coincide con ese filtro.",
+    "FILTER_BY_AUTHOR": "Filtrar por autor",
+    "FILTER_BY_TAG": "Filtrar por etiqueta",
+    "ALL_AUTHORS": "Todos los autores",
+    "ALL_TAGS": "Todas las etiquetas",
+    "PAGE_REPORT": "Mostrando del {{ start }} al {{ end }} de {{ total }} posts"
   }
 }
