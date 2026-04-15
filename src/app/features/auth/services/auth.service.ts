@@ -14,11 +14,11 @@ export interface AuthResponse {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private readonly http = inject(HttpClient);
-  private readonly authUrl = 'http://localhost:3000';
+  private readonly baseUrl = 'http://localhost:3000';
   private readonly storageKey = 'authSession';
 
   login(credentials: LoginData): Observable<AuthResponse> {
-    return this.http.get<User[]>(`${this.authUrl}/users`).pipe(
+    return this.http.get<User[]>(`${this.baseUrl}/users`).pipe(
       map((users) => {
         const user = users.find((u) => u.name === credentials.user && u.password === credentials.password);
 

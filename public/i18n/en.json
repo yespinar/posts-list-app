@@ -2,11 +2,11 @@
   "HOME": {
     "TITLE": "Posts List"
   },
-  "HEADER":{
+  "HEADER": {
     "SEARCH_PLACEHOLDER": "Search posts...",
     "LOGOUT": "Logout"
   },
-  "LOGIN":{
+  "LOGIN": {
     "TITLE": "Welcome",
     "DESCRIPTION": "Enter your credentials",
     "USER_LABEL": "User",
@@ -23,6 +23,18 @@
     "FILTER_BY_TAG": "Filter by tag",
     "ALL_AUTHORS": "All authors",
     "ALL_TAGS": "All tags",
-    "PAGE_REPORT": "Showing {{ start }} to {{ end }} of {{ total }} posts"
+    "PAGE_REPORT": "Showing {{ start }} to {{ end }} of {{ total }} posts",
+    "POST_NEW": {
+      "NEW_TITLE": "Create a new post",
+      "FIELD_TITLE": "Title",
+      "FIELD_BODY": "Content",
+      "FIELD_TAGS": "Tags",
+      "FIELD_TAGS_PLACEHOLDER": "Comma-separated tags",
+      "CANCEL": "Cancel",
+      "PUBLISH": "Publish",
+      "TITLE_PLACEHOLDER": "Enter the post title",
+      "BODY_PLACEHOLDER": "Enter the post content",
+      "TAGS_PLACEHOLDER": "Enter the post tags, separated by commas"
+    }
   }
 }

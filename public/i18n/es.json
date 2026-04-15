@@ -2,11 +2,11 @@
   "HOME": {
     "TITLE": "Lista de Posts"
   },
-  "HEADER":{
+  "HEADER": {
     "SEARCH_PLACEHOLDER": "Buscar posts...",
     "LOGOUT": "Salir"
   },
-  "LOGIN":{
+  "LOGIN": {
     "TITLE": "Bienvenido",
     "DESCRIPTION": "Introduce tus credenciales",
     "USER_LABEL": "Usuario",
@@ -23,6 +23,17 @@
     "FILTER_BY_TAG": "Filtrar por etiqueta",
     "ALL_AUTHORS": "Todos los autores",
     "ALL_TAGS": "Todas las etiquetas",
-    "PAGE_REPORT": "Mostrando del {{ start }} al {{ end }} de {{ total }} posts"
+    "PAGE_REPORT": "Mostrando {{ start }} a {{ end }} de {{ total }} posts",
+    "POST_NEW": {
+      "NEW_TITLE": "Crear un post",
+      "FIELD_TITLE": "Título",
+      "FIELD_BODY": "Contenido",
+      "FIELD_TAGS": "Etiquetas",
+      "CANCEL": "Cancelar",
+      "PUBLISH": "Publicar",
+      "TITLE_PLACEHOLDER": "Introduce el título del post",
+      "BODY_PLACEHOLDER": "Introduce el contenido del post",
+      "TAGS_PLACEHOLDER": "Introduce las etiquetas del post, separadas por comas"
+    }
   }
 }
