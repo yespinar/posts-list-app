@@ -1,7 +1,7 @@
 <div class="mb-4 p-8">
-  <div class="flex flex-col gap-4 w-3/4 mx-auto">
+  <div class="flex flex-col gap-4 w-full sm:w-3/4 mx-auto">
     <h2 class="text-2xl font-bold">{{ 'POSTS.TITLE' | translate }}</h2>
-    <div class="grid gap-4 md:grid-cols-2">
+    <div class="grid gap-4 sm:grid-cols-2">
       <p-select [options]="authors()" [ngModel]="selectedAuthor()" (ngModelChange)="onAuthorChange($event)"
         optionLabel="label" optionValue="value" placeholder="{{ 'POSTS.FILTER_BY_AUTHOR' | translate }}" />
 

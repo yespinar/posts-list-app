@@ -26,10 +26,20 @@ export class Header {
     { label: 'EN', value: 'en' },
   ];
   languageSelected = signal('es');
+  searchOpen = signal(false);
 
   onLanguageChange(language: string): void {
     this.languageSelected.set(language);
     this.translateService.use(language);
+  }
+
+  toggleSearch(): void {
+    this.searchOpen.update((value) => !value);
+  }
+
+  toggleLanguage(): void {
+    const next = this.languageSelected() === 'es' ? 'en' : 'es';
+    this.onLanguageChange(next);
   }
 
   onLogout(): void {

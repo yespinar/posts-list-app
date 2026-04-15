@@ -1,0 +1,23 @@
+.header-right {
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.header-icon-button {
+  border: none;
+  background: transparent;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: #0f766e;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon-button:hover,
+.header-icon-button:focus-visible {
+  background-color: rgba(6, 95, 70, 0.12);
+  outline: none;
+}
