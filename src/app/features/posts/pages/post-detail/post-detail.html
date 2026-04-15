@@ -1,0 +1,42 @@
+<div class="p-8 max-w-4xl mx-auto">
+  <a routerLink="/posts" class="text-sm font-medium text-sky-600 hover:underline">
+    ← Back to posts
+  </a>
+
+  @if(post()) {
+  <article class="mt-6 rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+    <header class="space-y-4">
+      <h1 class="text-3xl font-semibold text-slate-900">{{ post()?.title }}</h1>
+      <p class="text-sm text-slate-500 flex items-center gap-2">
+        {{ post()?.createdAt | date: 'mediumDate' }} · {{ authorName() }}
+        @if(authorAvatar()) {
+        <p-avatar [image]="authorAvatar()" shape="circle"></p-avatar>
+        }
+      </p>
+    </header>
+
+    <section class="mt-6 space-y-6">
+      <div class="grid gap-6 ">
+        <div>
+          <p class="text-base leading-7 text-slate-700">{{ post()?.body }}</p>
+        </div>
+
+        <div class="rounded-xl bg-slate-50 p-4 flex flex-col gap-6">
+          <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">Tags</h2>
+          <div class="flex flex-wrap gap-2">
+            @for (tag of post()?.tags ?? []; track tag) {
+            <span class="rounded-full bg-slate-100 px-3 text-xs text-slate-600">{{ tag }}</span>
+            } @empty {
+            <span class="text-sm text-slate-500">No tags</span>
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+  } @else {
+  <div class="mt-6 rounded-xl border border-slate-200 bg-white p-8 text-center text-slate-500">
+    Loading post...
+  </div>
+  }
+</div>

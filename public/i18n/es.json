@@ -24,6 +24,13 @@
     "ALL_AUTHORS": "Todos los autores",
     "ALL_TAGS": "Todas las etiquetas",
     "PAGE_REPORT": "Mostrando {{ start }} a {{ end }} de {{ total }} posts",
+    "POST_DETAIL": {
+      "BACK": "Volver a posts",
+      "AUTHOR": "Autor",
+      "TAGS": "Etiquetas",
+      "NO_TAGS": "Sin etiquetas",
+      "LOADING": "Cargando post..."
+    },
     "POST_NEW": {
       "NEW_TITLE": "Crear un post",
       "FIELD_TITLE": "Título",

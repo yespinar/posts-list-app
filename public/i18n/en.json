@@ -24,6 +24,13 @@
     "ALL_AUTHORS": "All authors",
     "ALL_TAGS": "All tags",
     "PAGE_REPORT": "Showing {{ start }} to {{ end }} of {{ total }} posts",
+    "POST_DETAIL": {
+      "BACK": "Back to posts",
+      "AUTHOR": "Author",
+      "TAGS": "Tags",
+      "NO_TAGS": "No tags",
+      "LOADING": "Loading post..."
+    },
     "POST_NEW": {
       "NEW_TITLE": "Create a new post",
       "FIELD_TITLE": "Title",
