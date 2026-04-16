@@ -5,8 +5,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonModule } from 'primeng/button';
 import { AuthService } from '../../../auth/services/auth.service';
 import { PostsService } from '../../services/posts.service';
-import { PostForm } from '../../interfaces/post-new-form';
-import { CreatePostPayload } from '../../interfaces/create-post-payload';
+import { IPostForm } from '../../interfaces/post-new-form';
+import { ICreatePostPayload } from '../../interfaces/create-post-payload';
 import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
 
@@ -20,7 +20,7 @@ export class PostNew {
   private readonly authService = inject(AuthService);
   private readonly postsService = inject(PostsService);
 
-  postForm = signal<PostForm>({ title: '', body: '', tags: '' });
+  postForm = signal<IPostForm>({ title: '', body: '', tags: '' });
 
   canSubmit = computed(() => {
     const form = this.postForm();
@@ -56,7 +56,7 @@ export class PostNew {
     }
 
     const form = this.postForm();
-    const payload: CreatePostPayload = {
+    const payload: ICreatePostPayload = {
       title: form.title.trim(),
       body: form.body.trim(),
       tags: form.tags

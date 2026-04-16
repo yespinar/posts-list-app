@@ -2,29 +2,36 @@ import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { filter, map, switchMap } from 'rxjs';
+import { map, switchMap } from 'rxjs';
 import { PostsService } from '../../services/posts.service';
-import type { Post } from '../../interfaces/post';
+import { IPost } from '../../interfaces/post';
 import { AvatarModule } from 'primeng/avatar';
+import { Comment } from '../../components/comment/comment';
 
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.html',
-  imports: [CommonModule, RouterModule, AvatarModule],
+  imports: [CommonModule, RouterModule, AvatarModule, Comment],
 })
 export class PostDetail {
   private readonly route = inject(ActivatedRoute);
   private readonly postsService = inject(PostsService);
 
   readonly users = toSignal(this.postsService.getUsers(), { initialValue: [] });
-
-  readonly post = toSignal<Post | null>(
+  readonly post = toSignal<IPost | null>(
     this.route.paramMap.pipe(
       map((params) => Number(params.get('id'))),
-      filter((id) => !Number.isNaN(id) && id > 0),
-      switchMap((id) => this.postsService.getPostById(id))
+      switchMap((id) => this.postsService.getPostById(id)),
     ),
-    { initialValue: null }
+    { initialValue: null },
+  );
+
+  readonly comments = toSignal(
+    this.route.paramMap.pipe(
+      map((params) => Number(params.get('id'))),
+      switchMap((id) => this.postsService.getCommentsByPostId(id)),
+    ),
+    { initialValue: [] }
   );
 
   readonly authorName = computed(() => {

@@ -1,8 +1,7 @@
-export interface IPost {
+export interface IComment {
   id: number;
+  postId: number;
   userId: number;
-  title: string;
   body: string;
-  tags: string[];
   createdAt: Date;
 }

@@ -1,0 +1,11 @@
+<div class="p-4 bg-white rounded-lg shadow">
+  <div class="flex items-center justify-between gap-3">
+    <p class="text-sm text-slate-500 flex items-center gap-2">{{ authorName() }}
+      @if(authorAvatar()) {<p-avatar [image]="authorAvatar()" shape="circle"></p-avatar>
+      }
+    </p>
+    <span class="text-xs uppercase tracking-[0.12em] text-slate-500">{{ comment()?.createdAt | date:
+      'mediumDate'}}</span>
+  </div>
+  <p class="mt-3 text-sm text-slate-700">{{ comment()?.body }}</p>
+</div>

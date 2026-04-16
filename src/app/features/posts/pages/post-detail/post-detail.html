@@ -22,7 +22,6 @@
         </div>
 
         <div class="rounded-xl bg-slate-50 p-4 flex flex-col gap-6">
-          <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">Tags</h2>
           <div class="flex flex-wrap gap-2">
             @for (tag of post()?.tags ?? []; track tag) {
             <span class="rounded-full bg-slate-100 px-3 text-xs text-slate-600">{{ tag }}</span>
@@ -31,6 +30,18 @@
             }
           </div>
         </div>
+      </div>
+    </section>
+
+    <hr class="my-6 border-slate-200" />
+    <section class="space-y-6">
+      <h2 class="text-1xl font-semibold text-slate-900">Comentarios ({{comments().length}})</h2>
+      <div class="space-y-4 flex flex-col gap-1">
+        @for (comment of comments(); track comment) {
+        <app-comment [comment]="comment" [authorName]="authorName()" [authorAvatar]="authorAvatar()"></app-comment>
+        } @empty {
+        <p class="text-sm text-slate-500">No comments yet</p>
+        }
       </div>
     </section>
   </article>
