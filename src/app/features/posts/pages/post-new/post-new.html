@@ -1,39 +1,41 @@
-<div class="mb-4 p-8">
-  <div class="flex flex-col gap-6 w-full max-w-3xl mx-auto">
-    <h2 class="text-2xl font-bold">{{ 'POSTS.POST_NEW.NEW_TITLE' | translate }}</h2>
+<div class="p-8 max-w-4xl mx-auto w-full md:w-3/4">
+  <div class="mt-6 rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+    <div class="flex flex-col gap-6 w-full max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold">{{ 'POSTS.POST_NEW.NEW_TITLE' | translate }}</h2>
 
-    <div class="grid gap-4">
-      <label class="flex flex-col gap-2">
-        <span class="font-semibold">{{ 'POSTS.POST_NEW.FIELD_TITLE' | translate }}</span>
-        <input pInputText type="text" class="border border-slate-300 rounded px-3 py-2" [value]="postForm().title"
-          (input)="updateTitle($any($event.target).value)"
-          placeholder="{{ 'POSTS.POST_NEW.TITLE_PLACEHOLDER' | translate }}" />
-      </label>
+      <div class="grid gap-4">
+        <label class="flex flex-col gap-2">
+          <span class="font-semibold">{{ 'POSTS.POST_NEW.FIELD_TITLE' | translate }}</span>
+          <input pInputText type="text" class="border border-slate-300 rounded px-3 py-2" [value]="postForm().title"
+            (input)="updateTitle($any($event.target).value)"
+            placeholder="{{ 'POSTS.POST_NEW.TITLE_PLACEHOLDER' | translate }}" />
+        </label>
 
-      <label class="flex flex-col gap-2">
-        <span class="font-semibold">{{ 'POSTS.POST_NEW.FIELD_BODY' | translate }}</span>
-        <textarea pTextarea rows="8" [value]="postForm().body"
-          placeholder="{{ 'POSTS.POST_NEW.BODY_PLACEHOLDER' | translate }}"
-          (input)="updateBody($any($event.target).value)"></textarea>
-      </label>
+        <label class="flex flex-col gap-2">
+          <span class="font-semibold">{{ 'POSTS.POST_NEW.FIELD_BODY' | translate }}</span>
+          <textarea pTextarea rows="8" [value]="postForm().body"
+            placeholder="{{ 'POSTS.POST_NEW.BODY_PLACEHOLDER' | translate }}"
+            (input)="updateBody($any($event.target).value)"></textarea>
+        </label>
 
-      <label class="flex flex-col gap-2">
-        <span class="font-semibold">{{ 'POSTS.POST_NEW.FIELD_TAGS' | translate }}</span>
-        <input pInputText type="text" class="border border-slate-300 rounded px-3 py-2" [value]="postForm().tags"
-          placeholder="{{ 'POSTS.POST_NEW.TAGS_PLACEHOLDER' | translate }}"
-          (input)="updateTags($any($event.target).value)" />
-      </label>
-    </div>
+        <label class="flex flex-col gap-2">
+          <span class="font-semibold">{{ 'POSTS.POST_NEW.FIELD_TAGS' | translate }}</span>
+          <input pInputText type="text" class="border border-slate-300 rounded px-3 py-2" [value]="postForm().tags"
+            placeholder="{{ 'POSTS.POST_NEW.TAGS_PLACEHOLDER' | translate }}"
+            (input)="updateTags($any($event.target).value)" />
+        </label>
+      </div>
 
-    <div class="flex flex-wrap gap-3 justify-end pt-2">
-      <button type="button" class="rounded border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
-        (click)="onCancel()">
-        {{ 'POSTS.POST_NEW.CANCEL' | translate }}
-      </button>
+      <div class="flex flex-wrap gap-3 justify-end pt-2">
+        <button type="button" class="rounded border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
+          (click)="onCancel()">
+          {{ 'POSTS.POST_NEW.CANCEL' | translate }}
+        </button>
 
-      <p-button type="button" class="disabled:opacity-50" [disabled]="!canSubmit()" (click)="onPublish()">
-        {{ 'POSTS.POST_NEW.PUBLISH' | translate }}
-      </p-button>
+        <p-button type="button" class="disabled:opacity-50" [disabled]="!canSubmit()" (click)="onPublish()">
+          {{ 'POSTS.POST_NEW.PUBLISH' | translate }}
+        </p-button>
+      </div>
     </div>
   </div>
 </div>
