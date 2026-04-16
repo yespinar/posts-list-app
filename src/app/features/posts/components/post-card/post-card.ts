@@ -17,6 +17,6 @@ export class PostCard {
   readonly router = inject(Router);
 
   onClick(): void {
-    this.router.navigate(['/post', this.post()?.id]);
+    this.router.navigate(['/posts', this.post()?.id]);
   }
 }
