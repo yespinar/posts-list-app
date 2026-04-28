@@ -1,4 +1,9 @@
 <div class="p-8 max-w-4xl mx-auto w-full md:w-3/4">
+  <div class="flex justify-between items-center">
+    <a routerLink="/posts" class="hover:cursor-pointer text-sm font-medium text-sky-600 hover:underline">
+      ← {{ 'NAVIGATION.BACK_TO_POSTS' | translate }}
+    </a>
+  </div>
   <div class="mt-6 rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
     <div class="flex flex-col gap-6 w-full max-w-3xl mx-auto">
       <h2 class="text-2xl font-bold">{{ 'POSTS.POST_NEW.NEW_TITLE' | translate }}</h2>
@@ -27,7 +32,8 @@
       </div>
 
       <div class="flex flex-wrap gap-3 justify-end pt-2">
-        <button type="button" class="rounded border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
+        <button pButton type="button"
+          class="rounded border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50 bg-white"
           (click)="onCancel()">
           {{ 'POSTS.POST_NEW.CANCEL' | translate }}
         </button>

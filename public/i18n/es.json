@@ -41,6 +41,17 @@
       "TITLE_PLACEHOLDER": "Introduce el título del post",
       "BODY_PLACEHOLDER": "Introduce el contenido del post",
       "TAGS_PLACEHOLDER": "Introduce las etiquetas del post, separadas por comas"
+    },
+    "COMMENT": {
+      "COMMENTS": "Comentarios",
+      "NO_COMMENTS": "Aún no hay comentarios.",
+      "ADD_COMMENT": "Agregar un comentario",
+      "NO_TAGS": "Sin etiquetas",
+      "LOADING_POST": "Cargando post..."
     }
+  },
+  "NAVIGATION":{
+    "BACK_TO_POSTS": "Volver a posts",
+    "NEW_POST": "Nuevo post"
   }
 }

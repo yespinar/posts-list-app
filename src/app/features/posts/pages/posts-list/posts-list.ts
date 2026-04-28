@@ -7,11 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { PostsService } from '../../services/posts.service';
 import { PostCard } from '../../components/post-card/post-card';
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
+import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-posts-list',
   templateUrl: './posts-list.html',
-  imports: [CommonModule, TranslatePipe, SelectModule, FormsModule, PostCard, PaginatorModule],
+  imports: [CommonModule, TranslatePipe, SelectModule, FormsModule, PostCard, PaginatorModule, ButtonModule, RouterModule],
 })
 export class PostsList {
   postService = inject(PostsService);

@@ -1,6 +1,6 @@
 <div class="p-8 max-w-4xl mx-auto w-full md:w-3/4">
   <a routerLink="/posts" class="text-sm font-medium text-sky-600 hover:underline">
-    ← Back to posts
+    ← {{ 'NAVIGATION.BACK_TO_POSTS' | translate }}
   </a>
 
   @if(post()) {
@@ -26,7 +26,7 @@
             @for (tag of post()?.tags ?? []; track tag) {
             <span class="rounded-full bg-slate-100 px-3 text-xs text-slate-600">{{ tag }}</span>
             } @empty {
-            <span class="text-sm text-slate-500">No tags</span>
+            <span class="text-sm text-slate-500">{{'POSTS.COMMENT.NO_TAGS' | translate}}</span>
             }
           </div>
         </div>
@@ -35,19 +35,19 @@
 
     <hr class="my-6 border-slate-200" />
     <section class="space-y-6">
-      <h2 class="text-1xl font-semibold text-slate-900">Comentarios ({{comments().length}})</h2>
+      <h2 class="text-1xl font-semibold text-slate-900">{{'POSTS.COMMENT.COMMENTS' | translate}} ({{comments().length}})</h2>
       <div class="space-y-4 flex flex-col gap-1">
         @for (comment of comments(); track comment) {
         <app-comment [comment]="comment" [authorName]="authorName()" [authorAvatar]="authorAvatar()"></app-comment>
         } @empty {
-        <p class="text-sm text-slate-500">No comments yet</p>
+        <p class="text-sm text-slate-500">{{'POSTS.COMMENT.NO_COMMENTS' | translate}}</p>
         }
       </div>
     </section>
   </article>
   } @else {
   <div class="mt-6 rounded-xl border border-slate-200 bg-white p-8 text-center text-slate-500">
-    Loading post...
+    {{'POSTS.COMMENT.LOADING_POST' | translate}}
   </div>
   }
 </div>

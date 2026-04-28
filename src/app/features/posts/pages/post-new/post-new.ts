@@ -9,11 +9,12 @@ import { IPostForm } from '../../interfaces/post-new-form';
 import { ICreatePostPayload } from '../../interfaces/create-post-payload';
 import { InputTextModule } from 'primeng/inputtext';
 import { TextareaModule } from 'primeng/textarea';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-post-new',
   templateUrl: './post-new.html',
-  imports: [CommonModule, TranslatePipe, ButtonModule, InputTextModule, TextareaModule],
+  imports: [CommonModule, TranslatePipe, ButtonModule, InputTextModule, TextareaModule, RouterModule],
 })
 export class PostNew {
   private readonly router = inject(Router);

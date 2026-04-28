@@ -42,6 +42,17 @@
       "TITLE_PLACEHOLDER": "Enter the post title",
       "BODY_PLACEHOLDER": "Enter the post content",
       "TAGS_PLACEHOLDER": "Enter the post tags, separated by commas"
+    },
+    "COMMENT": {
+      "COMMENTS": "Comments",
+      "NO_COMMENTS": "No comments yet.",
+      "ADD_COMMENT": "Add a comment",
+      "NO_TAGS": "No tags",
+      "LOADING_POST": "Loading post..."
     }
+  },
+  "NAVIGATION":{
+    "BACK_TO_POSTS": "Back to posts",
+    "NEW_POST": "New post"
   }
 }

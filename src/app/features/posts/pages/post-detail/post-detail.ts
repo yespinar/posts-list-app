@@ -7,11 +7,12 @@ import { PostsService } from '../../services/posts.service';
 import { IPost } from '../../interfaces/post';
 import { AvatarModule } from 'primeng/avatar';
 import { Comment } from '../../components/comment/comment';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.html',
-  imports: [CommonModule, RouterModule, AvatarModule, Comment],
+  imports: [CommonModule, RouterModule, AvatarModule, Comment, TranslatePipe],
 })
 export class PostDetail {
   private readonly route = inject(ActivatedRoute);
