@@ -1,0 +1,15 @@
+<form class="space-y-4">
+  <div>
+    <label for="comment" class="block text-sm font-medium text-gray-700">{{'POSTS.COMMENT.ADD_COMMENT' |
+      translate}}</label>
+    <div class="mt-1">
+      <textarea pTextarea id="comment" name="comment" rows="3" (input)="updateComment($any($event.target).value)"
+        class="block w-full sm:text-sm "></textarea>
+    </div>
+  </div>
+  <div class="flex justify-end">
+    <button pButton size="small" type="button" (click)="onPublish()">
+      {{'POSTS.COMMENT.SUBMIT_COMMENT' | translate}}
+    </button>
+  </div>
+</form>
