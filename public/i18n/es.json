@@ -47,7 +47,8 @@
       "NO_COMMENTS": "Aún no hay comentarios.",
       "ADD_COMMENT": "Agregar un comentario",
       "NO_TAGS": "Sin etiquetas",
-      "LOADING_POST": "Cargando post..."
+      "LOADING_POST": "Cargando post...",
+      "SUBMIT_COMMENT": "Enviar comentario"
     }
   },
   "NAVIGATION":{

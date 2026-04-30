@@ -48,7 +48,8 @@
       "NO_COMMENTS": "No comments yet.",
       "ADD_COMMENT": "Add a comment",
       "NO_TAGS": "No tags",
-      "LOADING_POST": "Loading post..."
+      "LOADING_POST": "Loading post...",
+      "SUBMIT_COMMENT": "Submit"
     }
   },
   "NAVIGATION":{
