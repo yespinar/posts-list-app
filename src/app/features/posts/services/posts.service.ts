@@ -37,4 +37,12 @@ export class PostsService {
   getCommentsByPostId(postId: number): Observable<IComment[]> {
     return this.http.get<IComment[]>(`${this.baseUrl}/posts/${postId}/comments`);
   }
+
+  createComment(comment: Omit<IComment, 'id'>): Observable<IComment> {
+    const payload = {
+      ...comment,
+    };
+    return this.http.post<IComment>(`${this.baseUrl}/comments`, payload);
+  }
+
 }
